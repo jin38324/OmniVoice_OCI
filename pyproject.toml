@@ -30,17 +30,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "torch>=2.4",
-    "torchaudio>=2.4",
-    "transformers>=5.3.0",
-    "accelerate",
-    "pydub",
     "gradio",
-    "tensorboardX",
-    "webdataset",
     "numpy",
     "soundfile",
-    "librosa",
+    "openai",
 ]
 
 [project.optional-dependencies]
@@ -50,24 +43,8 @@ tn = [
     "num2words",           # integer-to-words fallback for other languages
 ]
 
-eval = [
-    "jiwer==3.1.0",       # WER
-    "s3prl",               # Speech representation (HuBERT etc.)
-    "funasr",              # ASR models
-    "zhconv",              # Chinese character normalization
-    "zhon",                # Chinese punctuation
-    "unidecode",            # Unicode normalization
-]
-
-lora = [
-    "peft>=0.20.0",       # LoRA fine-tuning support
-]
-
 [project.scripts]
-omnivoice-infer = "omnivoice.cli.infer:main"
-omnivoice-infer-batch = "omnivoice.cli.infer_batch:main"
 omnivoice-demo = "omnivoice.cli.demo:main"
-omnivoice-merge-lora = "omnivoice.cli.merge_lora:main"
 
 [project.urls]
 Homepage = "https://github.com/k2-fsa/OmniVoice"
